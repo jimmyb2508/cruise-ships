@@ -10,5 +10,14 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.9.0"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jimmyb2508/cruise-ships.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jimmyb2508/cruise-ships/issues"
+  },
+  "homepage": "https://github.com/jimmyb2508/cruise-ships#readme"
 }
