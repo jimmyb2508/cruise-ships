@@ -24,7 +24,9 @@ describe('Ship', () => {
               name: 'Calais',
               ships: []
             };
-            itinerary = new Itinerary([dover, calais]);
+            itinerary = {
+              ports: [dover, calais]
+            };
             ship = new Ship(itinerary);
       });
         it('can be instanstiated', () => {
@@ -42,30 +44,44 @@ describe('Ship', () => {
             expect(dover.addShip).toHaveBeenCalledWith(ship);
         });
         it(`can't sail further than its itinerary`, () => {
-            dover = new Port('Dover');
-            calais = new Port('Calais');
-            itinerary = new Itinerary([dover, calais]);
-            ship = new Ship(itinerary);
-    
             ship.setSail();
             ship.dock();
-    
+
             expect(() => ship.setSail()).toThrowError('End of itinerary reached');
         })
     });
 });
 
 describe('Dock', () => {
+        let ship;
+        let dover;
+        let calais;
+        let itinerary;
+        beforeEach(() => {
+          const port = {
+            removeShip: jest.fn(),
+            addShip: jest.fn(),
+          }
+          dover = {
+            ...port,
+            name: 'Dover',
+            ships: []
+          };
+          calais = {
+            ...port,
+            name: 'Calais',
+            ships: []
+          };
+          itinerary = {
+            ports: [dover, calais]
+          };
+          ship = new Ship(itinerary);
+        })
     it('can dock at a different port', () => {
-        const dover = new Port('Dover');
-        const calais = new Port('Calais');
-        const itinerary = new Itinerary([dover, calais])
-        const ship = new Ship(itinerary);
-
         ship.setSail();
         ship.dock();
 
         expect(ship.currentPort).toBe(calais);
-        expect(calais.ships).toContain(ship);
+        expect(calais.addShip).toHaveBeenCalledWith(ship);
     });
 });
