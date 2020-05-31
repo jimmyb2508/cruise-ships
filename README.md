@@ -1,12 +1,18 @@
 # Project Title - Cruise Ships 🚢
 
-⚓️ Board the MCR Codes Cruise Ship 🛳for a round-the-world trip, visiting the world's most famous ports
+⚓️ Board the MCR Codes Cruise Ship 🛳 for a round-the-world trip, visiting the world's most famous ports
 
 Cruise Ships is great because it's made of Vanilla JavaScript and can go anywhere! 🏝
 
 Users become the Captain 👩‍✈️👨‍✈️ of the Ship ⛴ and begin their journey by pressing the 'Set Sail' ⛵️ button. This will automatically plot a course 🌅 to the next port on the ships itinerary. 🚤 After every port has been reached users must disembark the cruise ship 🛥!
 
-But don't worry - this is JavaScript 🤖: You can always refresh the page to embark on another trip! 🌍
+But don't worry: this is JavaScript! 🤖
+
+You can always refresh the page to embark on another trip! 🌍
+
+## Play
+
+You can embark on a cruise by visiting: https://cruise-ships.now.sh/
 
 ## Tests
 
