@@ -8,6 +8,7 @@
   <link rel="icon" href="images/ship.png" />
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');</style>
 </head>
 <body>
   <div id="viewport">
@@ -19,14 +20,16 @@
   <script src="src/controller.js"></script>
   <script src="src/Port.js"></script>
   <script src="src/Itinerary.js"></script>
+  <script src="src/Ship.js"></script>
   <script>
-    const controller = new Controller(ship);
     const itinerary = new Itinerary([
-      new Port('Southampton'),
-      new Port('Portsmouth'),
-      new Port('Gibralter'),
-      new Port('Barcelona')
+      new Port('Amber Cove'),
+      new Port('San Juan'),
+      new Port('Grand Turk'),
+      new Port('New York City')
     ]);
+    const ship = new Ship(itinerary);
+    const controller = new Controller(ship);
     controller.renderPorts(itinerary.ports);
     controller.renderShip(ship);
   </script>
